@@ -1,0 +1,25 @@
+<h3>{{ product['name'] }}</h3>
+
+<p>{{ product['category'] }}</p>
+<p>$ {{ product['price'] }}</p>
+
+<p>Filtro default: {{ product['price'] | default('Sin precio', True) }}</p>
+
+<!-- {{"<script>alert()</script>" | safe}} -->
+
+{{"<h1>Filtro de Safe: Hola Mundo</h1>" | safe}}
+{{"Filtro truncate: Esto es la descripcion de un producto bastante chulo" | truncate(23)}}  <!-- los ultimos 3 caracteres seran puntos supensivos -->
+<br>
+{{"Filtro count: Esto es la descripcion de un producto bastante chulo" | count}} <!-- Muestra el numero de caracteres -->
+
+<p>{{ "Filtro float: 70.7" | float }}</p>
+<p>{{ "Filtro int: 70.7" | int }}</p>
+
+<p>{{ 3.1415926535 | round(4) }}</p>
+<p>{{ ["Iphone", "iPad"] | join(", ") }}</p> <!--Pones todo como texto y lo separa con una coma-->
+<p>{{ ["Iphone", "iPad"] | length }}</p> <!--Muestra la cantidad de elemntos en el array-->
+<p>{{ {'offer':False, 'price': 50.5, 'k':45} | tojson }}</p> <!--Pasamos el objeto a un JSON-->
+
+<p>Filtro global custom: {{ 50 | mydouble}}</p>
+
+<p>Filtro global custom: {{ product | iva}}</p>

@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+
+
+{% block container %}
+    {% for key, product in products.items() %}
+        <div>
+            <a href="{{ url_for('product.show', id=key) }}">{{loop.cycle('impar', 'par')}} {{ product['name'] }}</a>
+
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for key, product in products.items() %}
+        <div>
+            <a href="{{ url_for('product.show', id=key) }}">{{ product['name'] }}</a>
+            
+        </div>
+    {% endfor %}
+</body>
+</html> -->
